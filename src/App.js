@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       {/* <Auth /> */}
       {isLoogedIn ? <Layout /> : <Auth />}
+      {/* <Layout /> */}
     </div>
   );
 }

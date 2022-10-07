@@ -1,6 +1,5 @@
 .container {
-  width: 500px;
-  height: 500px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +7,6 @@
   margin-right: auto;
   background-color: rebeccapurple;
   align-items: center;
-  margin-top: 10%;
 }
 h1 {
   padding: 30px;
