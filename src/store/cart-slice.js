@@ -28,7 +28,9 @@ const cartSlice = createSlice({
       state.totalQuantity++;
     },
     removeFromCart() {},
-    setShowCart() {},
+    setShowCart(state) {
+        state.showCart = !state.showCart
+    },
   },
 });
 export const cartActions = cartSlice.actions;
