@@ -6,9 +6,15 @@
 .header-ul {
   display: flex;
   flex: 1;
+  align-items: center;
   justify-content: space-between;
 }
 .header-h2 {
   font-family: monospace;
   font-size: 30px;
+}
+.logout-btn{
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(245, 92, 36);
 }

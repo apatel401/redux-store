@@ -1,7 +1,7 @@
 ul {
   list-style-type: none;
 }
-li {
+.cartIcon {
   padding: 10px;
 }
 .cartIcon h3 {
