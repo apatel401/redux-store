@@ -1,4 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { createSlice } from "@reduxjs/toolkit";
+import { uiActions } from "./ui-slice";
+import { useDispatch } from "react-redux";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -43,5 +46,49 @@ const cartSlice = createSlice({
     },
   },
 });
+// const cart = useSelector((state) => state.cart);
+
+export const sendCartData = (cart) => {
+  return async (dispatch) => {
+    dispatch(
+      uiActions.showNotification({
+        open: true,
+        message: "Sending Request",
+        type: "warning",
+      })
+    );
+    const sendRequest = async () => {
+      //sending state as sending request
+      // const dispatch = useDispatch();
+      const res = await fetch(
+        "https://redux-45ac4-default-rtdb.firebaseio.com/cartItem.json",
+        {
+          method: "PUT",
+          body: JSON.stringify(cart),
+        }
+      );
+      const data = await res.json();
+
+      dispatch(
+        uiActions.showNotification({
+          open: true,
+          message: "Sent Request to database",
+          type: "success",
+        })
+      );
+    };
+    try {
+      await sendRequest();
+    } catch (err) {
+      dispatch(
+        uiActions.showNotification({
+          open: true,
+          message: "Sending Request",
+          type: "error",
+        })
+      );
+    }
+  };
+};
 export const cartActions = cartSlice.actions;
 export default cartSlice;
