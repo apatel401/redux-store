@@ -5,7 +5,7 @@ import { cartActions } from "../store/cart-slice";
 import "./Product.css";
 const Product = ({ name, id, imgURL, price }) => {
   const cartItems = useSelector((state) => state.cart.itemsList)
-  console.log(cartItems)
+  // console.log(cartItems)
   const dispatch = useDispatch();
   const addToCart = () => {
     dispatch(cartActions.addToCart({
