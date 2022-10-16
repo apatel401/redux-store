@@ -45,6 +45,7 @@ export const fetchData = () => {
           }
         );
         const data = await res.json();
+        console.log(data);
         // Send state as Request is successful
         dispatch(
           uiActions.showNotification({

@@ -9,8 +9,8 @@ const Cart = () => {
     dispatch(cartActions.setShowCart())
   }
   return (
-    <div className="cartIcon" onClick={showCart}>
-      <h3>Cart: {quantity} Items</h3>
+    <div className="cartIcon">
+      <h3 onClick={showCart}>Cart: {quantity} Items</h3>
     </div>
   );
 };
